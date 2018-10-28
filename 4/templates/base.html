@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="hr">
+	<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="x-ua-compatible" content="ie=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+	  <title>{% block title %}{% endblock %}</title>
+	  <link rel="stylesheet" href="/static/css/bootstrap.css">
+	  <link rel="stylesheet" href="/static/css/style.css">
+	</head>
+	<body>
+		{% include "header.html" %}
+		
+		{% block content %}
+		{% endblock %}
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="/static/js/bootstrap.js"></script>
+		<script src="/static/js/script.js"></script>
+	</body>
+</html>
