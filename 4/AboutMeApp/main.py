@@ -6,9 +6,8 @@ app.debug = True
 
 @app.route("/")
 def index():
-	config = Config()
-	
-	ime_i_prezime = config.name + ' ' + config.surname
+
+	ime_i_prezime = Config.name + ' ' + Config.surname
 	
 	return render_template("index.html",
 						   name = ime_i_prezime)
