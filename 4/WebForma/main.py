@@ -5,6 +5,9 @@ import json
 
 app = Flask(__name__)
 app.debug = True
+app.secret_key = b'xen_o7q536_*88^j-)m$pyyp*gmq$()8!p*ral@+k5+_=^jnjd'
+
+csrf = CSRFProtect(app)
 
 
 @app.route("/")
