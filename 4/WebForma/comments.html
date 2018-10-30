@@ -13,6 +13,7 @@
 	</ul>
 	<hr>
 	<form method="post" action="/comments">
+		<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 		Ime:<br>
 		<input type="text" name="ime"><br>
 		Komentar:<br>
