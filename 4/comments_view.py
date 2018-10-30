@@ -10,7 +10,6 @@ app.debug = True
 def komentari():
 	
 	komentari = []
-	
 	poruka = ''
 	
 	# Učitavamo komentare iz datoteke
