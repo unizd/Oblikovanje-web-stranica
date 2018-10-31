@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from config import Config
 from flask_wtf.csrf import CSRFProtect
 import validators
@@ -42,13 +42,15 @@ def vjestine():
 def komentari():
 	
 	komentari = []
-	
 	poruka = ''
 	
 	# Učitavamo komentare iz datoteke
 	with open('komentari.json', mode='r', encoding='utf-8') as json_datoteka:
 		komentari = json.load(json_datoteka)
 		json_datoteka.close()
+	
+	ime = ''
+	komentar = ''
 	
 	# Ako je metoda POST onda podatke validiramo i spremamo
 	if request.method == 'POST':
@@ -68,9 +70,13 @@ def komentari():
 				komentari.append({"ime": ime, "komentar": komentar})
 				json.dump(komentari, json_datoteka)
 				json_datoteka.close()
+				
+				# Da ne radi dupli POST prilikom refreshanja stranice
+				# (https://en.wikipedia.org/wiki/Post/Redirect/Get)
+				return redirect("/comments")
 	
 	# Prikazujemo podatke
-	return render_template("comments.html", komentari=komentari, poruka=poruka)
+	return render_template("comments.html", komentari=komentari, poruka=poruka, ime=ime, komentar=komentar)
 
 
 if __name__ == "__main__":
