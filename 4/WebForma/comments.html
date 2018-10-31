@@ -15,9 +15,9 @@
 	<form method="post" action="/comments">
 		<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 		Ime:<br>
-		<input type="text" name="ime"><br>
+		<input type="text" name="ime" value="{{ ime }}"><br>
 		Komentar:<br>
-		<input type="text" name="komentar"><br><br>
+		<input type="text" name="komentar" value="{{ komentar }}"><br><br>
 		<input type="submit" value="Pošalji komentar">
 	</form>
 </div>
