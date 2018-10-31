@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from config import Config
+from flask_wtf.csrf import CSRFProtect
 import validators
 import json
 
