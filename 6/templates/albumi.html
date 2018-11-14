@@ -1,0 +1,18 @@
+<!-- TODO -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h1>Albumi</h1>
+	</div>
+	<ul>
+		{% for album in albumi %}
+			<li>
+				<strong>{{ album["title"] }}</strong>
+				<a href = {{ url_for('slike', album_id=album["id"]) }}> Slike</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- TODO -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h1>Postovi</h1>
+	</div>
+	<ul>
+		{% for post in postovi %}
+			<li><strong>{{ post["title"] }}</strong> - {{ post["body"] }}</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}

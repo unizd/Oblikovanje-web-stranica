@@ -1,0 +1,15 @@
+<!-- TODO -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h1>Slike</h1>
+	</div>
+	<div>
+		{% for slika in slike %}
+			<img src="{{ slika["thumbnailUrl"] }}" alt="Slika"></img>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
