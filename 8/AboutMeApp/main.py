@@ -3,6 +3,7 @@ from config import Config
 from flask_wtf.csrf import CSRFProtect
 import validators
 import json
+import util
 import logging
 
 app = Flask(__name__)
@@ -34,7 +35,7 @@ def bankovni_racun():
 	ime_banke = Config.banka
 	broj_racuna = Config.iban	
 	
-	if not validators.iban(broj_racuna):
+	if not util.provjeri_iban(broj_racuna):
 		broj_racuna = "Neispravan IBAN!"
 	
 	return render_template("bankAccount.html", banka=ime_banke, iban=broj_racuna)
