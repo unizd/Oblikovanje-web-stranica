@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Administracija</h1>
+    </div>
+    <div>
+        <h3>Popis korisnika:</h3>
+        <ul>
+            {% for user in users %}
+            <li>{{user}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

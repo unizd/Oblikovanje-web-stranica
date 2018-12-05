@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Početna stranica</h1>
+    </div>
+    <div>
+        <h2>current_user:</h2>
+        <h3>is_authenticated: <b>{{current_user.is_authenticated}}</b></h3>
+        <h3>is_active: <b>{{current_user.is_active}}</b></h3>
+        <h3>is_anonymous: <b>{{current_user.is_anonymous}}</b></h3>
+        <h3>get_id(): <b>{{current_user.get_id()}}</b></h3>
+        <h3>is_admin: <b>{{current_user.is_admin}}</b></h3>
+    </div>
+</div>
+{% endblock %}
