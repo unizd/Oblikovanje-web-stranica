@@ -87,6 +87,7 @@ def on_identity_loaded(sender, identity):
 def not_authorised(e):
     return render_template('401.html'), 401
 
+# Ovo se ne koristi. Služi kao primjer za verifikaciju registracije preko maila
 @app.route('/confirm/<token>')
 @login_required
 def confirm(token):
