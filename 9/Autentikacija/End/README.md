@@ -15,3 +15,6 @@
   * pip install -r requirements.txt
 * Pokrenite Flask aplikaciju
   * flask run
+  * U pregledniku odite na http://localhost:5000
+* Napomena
+  * Po pokretanju aplikacije prijavite se s nekim od korisnika iz users.json datoteke. Sve zaporke u users.json datoteci su kriptirane, a redom one su: sifra1, sifra2, sifra3, sifra4. Da bi vam autentikacija radila, morate ostaviti app.secret_key isti, u protivnom check_password_hash() metoda neće ispravno raditi.
