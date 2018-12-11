@@ -4,9 +4,10 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo
 from flask_login import UserMixin
 import json
 from werkzeug.security import generate_password_hash
+from flask.ext.babel import gettext
 
 class LoginForm(FlaskForm):
-    email = TextField('E-mail', validators=[DataRequired(), Length(1, 64), Email()])
+    email = TextField(gettext('E-mail'), validators=[DataRequired(), Length(1, 64), Email()])
     password = PasswordField('Zaporka', validators=[DataRequired()])
     remember_me = BooleanField('Ostani prijavljen')
     submit = SubmitField('Prijava')
