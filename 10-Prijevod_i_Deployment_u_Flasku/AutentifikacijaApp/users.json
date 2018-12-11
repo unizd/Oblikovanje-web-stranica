@@ -1,0 +1,6 @@
+{
+    "jure@unizd.hr": "pbkdf2:sha256:50000$ClVWrTj0$d9ef0819c7bcd9ac996079d284f87f4969f3ba09e504c58a839a169ef10c7193",
+    "ana@unizd.hr": "pbkdf2:sha256:50000$jAxdE7Uo$724de80805234acfe7cd2a3fe5dffb63b15ec40bdc235abbc3fe9a9b57fc3b63",
+    "ivana@unizd.hr": "pbkdf2:sha256:50000$EezWwgCg$a94684acced95a8999f1c309dbbda9e155193df3bced8051ebe699db7d7d2a1c",
+    "mario@unizd.hr": "pbkdf2:sha256:50000$WPyXIKDV$d518e0b72843df93cdb2d0e62fd796e7b4d5435c7d1eb2407a9c8154fd270fda"
+}
