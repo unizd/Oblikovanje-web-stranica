@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>O meni</title>
+</head>
+
+<body>
+    <h1 id="ime_prezime">(Ime i prezime)</h1>
+
+    <button id="unos_ime_prezime">Unesi ime i prezime</button>
+	
+	<h1>(Godina rođenja)</h1>
+	
+	<button>Unesi godinu rođenja</button>
+
+    <script>
+		const unosImenaIPrezimena_button = document.querySelector('#unos_ime_prezime');
+		
+		function unosImenaIPrezimena() {
+			let ime_i_prezime;
+			let tekst;
+			
+			ime_i_prezime = prompt("Unesite ime i prezime", "Ime i prezime");
+			
+			if (ime_i_prezime == null || ime_i_prezime == "") {
+				tekst = "Pogrešan unos.";
+			} else {
+				tekst = "Pozdrav " + ime_i_prezime + "!";
+			}
+			
+			document.getElementById("ime_prezime").innerHTML = tekst;
+		}
+		
+		unosImenaIPrezimena_button.addEventListener('click', unosImenaIPrezimena);
+    </script>
+</body>
+
+</html>
