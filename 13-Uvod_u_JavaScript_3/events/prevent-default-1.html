@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<form>
+    <div>
+        <label for="ime">Ime: </label>
+        <input id="ime" type="text">
+    </div>
+    <div>
+        <label for="prezime">Prezime: </label>
+        <input id="prezime" type="text">
+    </div>
+    <div>
+        <input id="submit" type="submit" value="Pošalji">
+    </div>
+</form>
+<p></p>
+
+<script>
+    var form = document.querySelector('form');
+    var ime = document.getElementById('ime');
+    var prezime = document.getElementById('prezime');
+    var submit = document.getElementById('submit');
+    var para = document.querySelector('p');
+
+    form.onsubmit = function (e) {
+        if (ime.value === '' || prezime.value === '') {
+            e.preventDefault();
+            para.textContent = 'Morate upisati i ime i prezime!';
+        }
+    }
+</script>
