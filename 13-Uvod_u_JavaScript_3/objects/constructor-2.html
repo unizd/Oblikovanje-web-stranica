@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Konstruktori u JavaScriptu</title>
+</head>
+
+<body>
+    <p>Primjeri korištenja JS konstruktora (vidi konzolu)</p>
+
+    <script>
+
+        function Osoba(ime) {
+            this.ime = ime;
+            this.pozdrav = function () {
+                alert('Bog! Ja sam ' + this.ime + '.');
+            };
+        }
+
+    </script>
+</body>
+
+</html>

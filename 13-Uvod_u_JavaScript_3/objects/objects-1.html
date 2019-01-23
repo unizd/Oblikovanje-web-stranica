@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Objekti u JavaScriptu</title>
+</head>
+
+<body>
+    <p>Primjeri korištenja JS objekata (vidi konzolu)</p>
+
+    <script>
+
+        var osoba = {
+            ime: ['Jure', 'Matić'],
+            starost: 21,
+            spol: 'm',
+            interesi: ['glazba', 'košarka'],
+            bio: function () {
+                alert(this.ime[0] + ' ' + this.ime[1] + ' je ' + this.starost + ' godina star. Interesi su mu ' + this.interesi[0] + ' i ' + this.interesi[1] + '.');
+            },
+            pozdrav: function () {
+                alert('Bog! Ja sam ' + this.ime[0] + '.');
+            }
+        };
+
+    </script>
+</body>
+
+</html>
