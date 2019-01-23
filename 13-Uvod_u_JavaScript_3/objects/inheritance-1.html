@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Objekti u JavaScriptu</title>
+</head>
+
+<body>
+    <p>Primjeri nasljeđivanja JS objekata (vidi konzolu)</p>
+
+    <script>
+
+        function Osoba(ime, prezime, starost, spol, interesi) {
+            this.imeprezime = {
+                ime,
+                prezime
+            };
+            this.starost = starost;
+            this.spol = spol;
+            this.interesi = interesi;
+            this.bio = function () {
+                alert(this.imeprezime.ime + ' ' + this.imeprezime.prezime + ' je ' + this.starost + ' godina star. Interesi su mu ' + this.interesi[0] + ' i ' + this.interesi[1] + '.');
+            };
+            this.pozdrav = function () {
+                alert('Bog! Ja sam ' + this.ime[0] + '.');
+            };
+        };
+
+        function Nastavnik(ime, prezime, starost, spol, interesi, predmet) {
+            Osoba.call(this, ime, prezime, starost, spol, interesi);
+
+            this.predmet = predmet;
+        }
+
+    </script>
+</body>
+
+</html>
