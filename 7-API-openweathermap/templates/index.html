@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Vrijeme: {{jsonWeather.name}}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Podaci o vremenu: {{jsonWeather.name}}</h1>
+    </div>
+    
+    <h2>
+        <img src="http://openweathermap.org/img/w/{{jsonWeather.weather[0].icon }}.png">
+        {{jsonWeather.weather[0].description | capitalize }}
+    </h2>
+    <h3>Temperatura: {{jsonWeather.main.temp | int}} C°</h3>
+    <h3>Vlažnost zraka: {{jsonWeather.main.humidity}}%</h3>
+    <h3>Datum: {{dt}}</h3>
+    <h2 class="page-header">Prognoza za slijedećih 5 dana: </h2>
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Temperatura</th>
+                <th>Vlažnost</th>
+                <th>Prognoza</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for forecast in jsonForecast.list %}
+        <tr>
+            <td>{{forecast.dt_txt}}</td>
+            <td>{{forecast.main.temp | int}} C°</td>
+            <td>{{forecast.main.humidity}}%</td>
+            <td>
+                <img src="http://openweathermap.org/img/w/{{forecast.weather[0].icon }}.png">
+                {{forecast.weather[0].description}}
+            </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

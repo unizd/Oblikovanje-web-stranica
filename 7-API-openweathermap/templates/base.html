@@ -1,0 +1,42 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Vrijeme{% endblock %}
+
+{%- block styles %}
+<!-- Bootstrap Flatly -->
+<link href="{{url_for('static', filename = 'bootstrap.flatly.min.css')}}" rel="stylesheet">
+{%- endblock styles %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Weather API Demo</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('index') }}">Zadar</a></li>
+                <li><a href="{{ url_for('city', id=3186886) }}">Zagreb</a></li>
+                <li><a href="{{ url_for('city', id=2643743) }}">London</a></li>
+                <li><a href="{{ url_for('city', id=5128638) }}">New York</a></li>
+                <li><a href="{{ url_for('city', id=3435910) }}">Buenos Aires</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
